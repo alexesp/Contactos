@@ -17,7 +17,9 @@
         x:Name="ListContacts"
         BackgroundColor="Transparent"
         SeparatorColor="Silver"
-        RowHeight="65">
+        RowHeight="65"
+        ItemSelected="ListContacts_ItemSelected"
+        ItemTapped="ListContacts_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Name}"

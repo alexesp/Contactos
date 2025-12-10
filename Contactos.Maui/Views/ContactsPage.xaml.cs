@@ -33,6 +33,21 @@ public partial class ContactsPage : ContentPage
         public string Email { get; set; }
     }
 
+    private async void ListContacts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        if (ListContacts.SelectedItem != null)
+        {
+            //DisplayAlert("test", "test", "OK");
+            await Shell.Current.GoToAsync(nameof(EditContactPage));
+        }
+        
+    }
+
+    private void ListContacts_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        ListContacts.SelectedItem = null;
+    }
+
     //private void btnEditContact_Clicked(object sender, EventArgs e)
     //{
     //    Shell.Current.GoToAsync(nameof(EditContactPage));
